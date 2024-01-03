@@ -5,7 +5,7 @@ from app.api.search import search
 
 metadata.create_all(engine)
 
-app = FastAPI(openapi_url="/api/v1/search/openapi.json", docs_url="/api/v1/search/docs")
+app = FastAPI(openapi_url="/api/v1/openapi.json", docs_url="/api/v1/docs")
 
 
 @app.on_event("startup")
