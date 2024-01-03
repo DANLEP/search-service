@@ -13,7 +13,7 @@ SELECT
 FROM
     attraction a
 LEFT JOIN user_attraction_preference uap ON a.id_attraction = uap.fk_attraction AND uap.fk_user = :id
-LEFT JOIN review r ON a.id_attraction = r.fk_attraction
+LEFT JOIN review r ON a.id_attraction = r.fk_attraction AND r.review_status = 'approved'
 WHERE
     uap.fk_user IS NULL OR uap.fk_user != :id
 GROUP BY
